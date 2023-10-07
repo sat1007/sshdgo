@@ -1,4 +1,4 @@
-module github.com/hi20160616/sshdgo
+module github.com/sat1007/sshdgo
 
 go 1.18
 

@@ -98,7 +98,8 @@ func main() {
 		// publicKey = gossh.MarshalAuthorizedKey(s.PublicKey())
 		// s.Write(publicKey)
 		io.WriteString(s, fmt.Sprintf("Login user: %s\n", s.User()))
-		cmd := exec.Command("/bin/sh")
+		cmd := exec.Command("bash")
+		// cmd := exec.Command("/bin/sh")
 		ptyReq, winCh, isPty := s.Pty()
 		if isPty {
 			cmd.Env = append(cmd.Env, fmt.Sprintf("TERM=%s", ptyReq.Term))
